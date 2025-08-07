@@ -1,0 +1,45 @@
+<div class="task-item {{#if completed}}task-completed{{/if}}" data-task-id="{{id}}">
+    <div class="task-checkbox-wrapper">
+        <input type="checkbox" 
+               class="task-checkbox" 
+               id="task-{{id}}" 
+               {{#if completed}}checked{{/if}}
+               data-task-id="{{id}}">
+        <label for="task-{{id}}" class="checkbox-label"></label>
+    </div>
+    
+    <div class="task-content">
+        <div class="task-header">
+            <h3 class="task-title" data-field="title">{{title}}</h3>
+            <div class="task-actions">
+                <button type="button" 
+                        class="btn-icon edit-task" 
+                        data-task-id="{{id}}"
+                        title="Edit task">
+                    ✏️
+                </button>
+                <button type="button" 
+                        class="btn-icon delete-task" 
+                        data-task-id="{{id}}"
+                        title="Delete task">
+                    🗑️
+                </button>
+            </div>
+        </div>
+        
+        {{#if description}}
+            <p class="task-description" data-field="description">{{description}}</p>
+        {{/if}}
+        
+        <div class="task-meta">
+            <small class="task-date">
+                Created: {{formatDate created_at}}
+                {{#if updated_at}}
+                    {{#notEquals created_at updated_at}}
+                        • Updated: {{formatDate updated_at}}
+                    {{/notEquals}}
+                {{/if}}
+            </small>
+        </div>
+    </div>
+</div>

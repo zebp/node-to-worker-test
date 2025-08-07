@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{#if title}}{{title}} - {{/if}}TODO App</title>
+    <meta name="description" content="A simple and elegant TODO list application">
+    
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="app-title">
+                <span class="app-icon">✓</span>
+                TODO App
+            </h1>
+            <p class="app-subtitle">Stay organized, get things done</p>
+        </header>
+        
+        <main class="main-content">
+            {{{body}}}
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2024 TODO App. Simple task management made easy.</p>
+        </footer>
+    </div>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>

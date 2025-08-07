@@ -1,0 +1,32 @@
+<div class="error-page">
+    <div class="error-content">
+        <div class="error-icon">
+            {{#ifEquals status 404}}🔍{{else}}⚠️{{/ifEquals}}
+        </div>
+        
+        <h1 class="error-title">
+            {{#ifEquals status 404}}Page Not Found{{else}}Something Went Wrong{{/ifEquals}}
+        </h1>
+        
+        <p class="error-message">{{message}}</p>
+        
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary">
+                <span class="btn-icon">🏠</span>
+                Go Home
+            </a>
+            
+            <button type="button" class="btn btn-secondary" onclick="history.back()">
+                <span class="btn-icon">←</span>
+                Go Back
+            </button>
+        </div>
+        
+        {{#if stack}}
+            <details class="error-details">
+                <summary>Technical Details (Development Only)</summary>
+                <pre class="error-stack">{{stack}}</pre>
+            </details>
+        {{/if}}
+    </div>
+</div>
